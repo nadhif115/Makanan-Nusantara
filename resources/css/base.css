@@ -1,0 +1,63 @@
+/* Tokens */
+:root {
+  --paper: #F6F1E4;
+  --surface: #FFFBF2;
+  --ink: #1B2A22;
+  --muted: #5C6A62;
+  --line: #DCD3BE;
+  --leaf: #1E5B43;
+  --leaf-deep: #133B2C;
+  --chili: #B8341F;
+  --turmeric: #E0A526;
+  --spice: #A8541A;
+  --nav-h: 60px;
+  --night: #111A16;
+  --night-line: #2D3B34;
+  --on-night: #EEF2EC;
+  --on-night-muted: #9DB0A5;
+  --focus: var(--leaf);
+  --radius: 6px;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Base */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 16px/1.45 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, p { margin: 0; }
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+a { color: inherit; }
+img { display: block; max-width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 12px); }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+[hidden] { display: none !important; }
+.num { font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); padding: 24px 0; }
+.notice {
+  background: #FBE9E5; color: var(--chili); border: 1px solid #E6B8AE;
+  border-radius: var(--radius); padding: 10px 14px; margin: 12px 0; font-size: 14px;
+}
+
+.btn {
+  min-height: 44px; padding: 0 18px; border-radius: var(--radius);
+  border: 1px solid var(--ink); background: transparent; font-weight: 600;
+}
+.btn-primary { background: var(--leaf); border-color: var(--leaf); color: #fff; }
+.btn-primary:disabled { opacity: .6; cursor: progress; }
+.btn-quiet { border-color: var(--line); }
+.btn-warn { border-color: var(--chili); color: var(--chili); }
+.btn-block { width: 100%; }
+.btn-sm { min-height: 40px; padding: 0 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
